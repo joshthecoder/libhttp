@@ -1,11 +1,17 @@
 #ifndef http_h
 #define http_h
 
+#include "stddef.h"
+
 typedef struct http_stream_s http_stream;
 typedef struct http_session_s http_session;
 typedef struct http_message_s http_message;
 
 typedef int (*http_stream_cb)(http_stream* stream, void* context);
+
+enum http_error_codes {
+  HTTP_ENOTIMPL         // Not yet implemented.
+};
 
 // Streams provide an interface for writing data to the socket
 // bound to a session. They are responsible for handling any
@@ -19,6 +25,7 @@ size_t http_stream_write(const char* buffer, size_t size);
 // A session represents a connection between a client and the server.
 // Create a socket connected to the server or accept incoming client
 // from listening socket. Initialize a new HTTP session using this socket.
+// Closing the session also closes the underlying socket.
 http_session* http_session_init(int sockfd);
 void http_session_close(http_session* session);
 
