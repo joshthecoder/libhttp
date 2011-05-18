@@ -1,7 +1,9 @@
+// libhttp - A HTTP client and server library.
+
 #ifndef http_h
 #define http_h
 
-#include "stddef.h"
+#include <stddef.h>
 
 typedef struct http_stream_s http_stream;
 typedef struct http_session_s http_session;
