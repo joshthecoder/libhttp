@@ -12,3 +12,9 @@ Goals of the project
 - Support enterprise deployments (ex: SPNEGO, Kerberos, NTLM)
 - Embeds into event loops for asynchronous networking (ex: libev)
 
+Planning
+--------
+Check out the wiki and the series of planning notes. The first phase is to dig
+into the HTTP protocol and learn it well before we start pushing code. Feel free to contribute
+if you are a HTTP guru or just open up RFC 2616 and start reading! :)
+
