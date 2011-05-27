@@ -15,6 +15,11 @@ enum http_error_codes {
   HTTP_ENOTIMPL         // Not yet implemented.
 };
 
+enum http_message_type {
+  HTTP_MESSAGE_REQUEST,
+  HTTP_MESSAGE_RESPONSE
+};
+
 // Streams provide an interface for writing data to the socket
 // bound to a session. They are responsible for handling any
 // encoding/decoding of the data. Data will be written or read from
@@ -45,6 +50,9 @@ http_message* http_response(int status_code, const char* reason_phrase);
 // this name does not yet exist. If it already exists then
 // the new value will be appended follow RFC2616 4.2 guidelines.
 void http_message_append_header(http_message* msg, const char* name, const char* value);
+
+// Type of message: request or response.
+int http_message_get_type(http_message* msg);
 
 // Set a stream callback for reading or writing the message body.
 // A parsed (incoming) message will read while a composed (outgoing)
