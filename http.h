@@ -44,7 +44,7 @@ http_message* http_response(int status_code, const char* reason_phrase);
 // Append a new header to the message if a field with
 // this name does not yet exist. If it already exists then
 // the new value will be appended follow RFC2616 4.2 guidelines.
-void http_message_set_header(http_message* msg, const char* name, const char* value);
+void http_message_append_header(http_message* msg, const char* name, const char* value);
 
 // Set a stream callback for reading or writing the message body.
 // A parsed (incoming) message will read while a composed (outgoing)
