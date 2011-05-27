@@ -25,17 +25,17 @@ void http_session_close(http_session* session) {
 }
 
 http_message* http_session_parse_request(http_session* session) {
-  // TODO: implement
+  /* TODO: implement */
   return NULL;
 }
 
 http_message* http_session_parse_response(http_session* session) {
-  // TODO: implement
+  /* TODO: implement */
   return NULL;
 }
 
 int http_session_send_message(http_session* session, const http_message* msg) {
-  // TODO: implement
+  /* TODO: implement */
   return HTTP_ENOTIMPL;
 }
 
